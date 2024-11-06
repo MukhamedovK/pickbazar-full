@@ -7,6 +7,7 @@ const nextConfig = {
     STRIPE_PUBLIC_KEY: 'your_stripe_public_key',
     API_URL: 'https://pickbazar-api-d0wn.onrender.com/shop/graphql',
   },
+  output: 'standalone',
   webpack: (config) => {
     config.resolve.modules.push(__dirname);
 
