@@ -1,16 +1,18 @@
-import 'reflect-metadata';
-import express from 'express';
-import { ApolloServer } from 'apollo-server-express';
-import { buildSchema } from 'type-graphql';
-import { UserResolver } from './shop/services/user/user.resolver';
-import { ProductResolver } from './shop/services/product/product.resolver';
-import { PaymentResolver } from './shop/services/payment/payment.resolver';
-import { OrderResolver } from './shop/services/order/order.resolver';
-import { CouponResolver } from './shop/services/coupon/coupon.resolver';
-import { CategoryResolver } from './shop/services/category/category.resolver';
+import { config } from "dotenv";
+import "reflect-metadata";
+import express from "express";
+import { ApolloServer } from "apollo-server-express";
+import { buildSchema } from "type-graphql";
+import { UserResolver } from "./shop/services/user/user.resolver";
+import { ProductResolver } from "./shop/services/product/product.resolver";
+import { PaymentResolver } from "./shop/services/payment/payment.resolver";
+import { OrderResolver } from "./shop/services/order/order.resolver";
+import { CouponResolver } from "./shop/services/coupon/coupon.resolver";
+import { CategoryResolver } from "./shop/services/category/category.resolver";
 const app: express.Application = express();
-const path = '/shop/graphql';
-const PORT = process.env.PORT || 4000;
+config();
+const path = "/shop/graphql";
+const PORT = process.env.SHOP_API_PORT || 4000;
 const main = async () => {
   const schema = await buildSchema({
     resolvers: [
