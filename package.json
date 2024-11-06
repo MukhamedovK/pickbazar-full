@@ -5,7 +5,7 @@
   "author": "RedQ, Inc.",
   "workspaces": [
     "packages/*"
-  ], 
+  ],
   "scripts": {
     "clean": "lerna clean --yes && rimraf node_modules",
     "clean:build": "lerna exec -- rimraf \"{.next,dist,build}\"",
