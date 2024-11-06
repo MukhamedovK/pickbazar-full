@@ -9,10 +9,10 @@ import { PaymentResolver } from "./shop/services/payment/payment.resolver";
 import { OrderResolver } from "./shop/services/order/order.resolver";
 import { CouponResolver } from "./shop/services/coupon/coupon.resolver";
 import { CategoryResolver } from "./shop/services/category/category.resolver";
-const app: express.Application = express();
+const app = express();
 config();
 const path = "/shop/graphql";
-const PORT = process.env.SHOP_API_PORT || 4000;
+const PORT = 4000;
 const main = async () => {
   const schema = await buildSchema({
     resolvers: [

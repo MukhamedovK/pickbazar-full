@@ -9,10 +9,10 @@ import CustomerResolver from "./admin/services/customer/customer.resolver";
 import CouponResolver from "./admin/services/coupon/coupon.resolver";
 import OrderResolver from "./admin/services/order/order.resolver";
 import StuffResolver from "./admin/services/stuff/stuff.resolver";
-const app: express.Application = express();
+const app = express();
 config();
 const path = "/admin/graphql";
-const PORT = process.env.ADMIN_API_PORT || 4004;
+const PORT = 4004;
 
 const main = async () => {
   const schema = await buildSchema({
